@@ -1,7 +1,51 @@
 
 > Windows only. Leans on winget (built into Windows 10/11), so it won't do anything useful on macOS or Linux.
 
-A "is this machine actually ready to work?" checker for Windows. Run it on a fresh box (or one you haven't touched in a while) and it audits your dev toolchain and then installs whatever's missing instead of just nagging you to do it yourself.
+Check and install if dev software is installed for web dev.
+
+Includes: 
+
+Python 3.12
+pip
+
+Java (OpenJDK 17)
+.NET SDK 8
+Visual Studio Build Tools 2022
+
+Node.js
+npm
+npx
+Git
+
+pnpm
+yarn
+
+TypeScript
+ESLint
+Prettier
+Vite
+Webpack
+
+numpy
+pandas
+requests
+flask
+fastapi
+uvicorn
+sqlalchemy
+pytest
+black
+mypy
+httpx
+pydantic
+python-dotenv
+rich
+typer
+celery
+redis
+pillow
+matplotlib
+scikit-learn
 
 Can be used to quickly set up whatever you need. Please let me know if you want me to add anything more.
 
