@@ -1,5 +1,5 @@
 
-> \*\*Windows only.\*\* Leans on winget (built into Windows 10/11), so it won't do anything useful on macOS or Linux.
+> Windows only. Leans on winget (built into Windows 10/11), so it won't do anything useful on macOS or Linux.
 
 A "is this machine actually ready to work?" checker for Windows. Run it on a fresh box (or one you haven't touched in a while) and it audits your dev toolchain and then installs whatever's missing instead of just nagging you to do it yourself.
 
@@ -55,12 +55,12 @@ Invoke-ps2exe .\\fulldevkit.ps1 .\\fulldevkit.exe -requireAdmin -title "Dev Kit 
 
 When it runs, each line is tagged:
 
-* `\[OK]` — already installed, nothing to do
-* `\[MISS]` — wasn't there, attempting install
-* `\[FIXED]` — was missing, now installed
-* `\[WAIT]` — install in progress
-* `\[FAIL]` — couldn't auto-install, manual step printed below it
-* `\[WARN]` — non-fatal, usually a PATH thing that a fresh terminal solves
+* `\[OK]` = already installed, nothing to do
+* `\[MISS]` = wasn't there, attempting install
+* `\[FIXED]` = was missing, now installed
+* `\[WAIT]` = install in progress
+* `\[FAIL]` = couldn't auto-install, manual step printed below it
+* `\[WARN]` = non-fatal, usually a PATH thing that a fresh terminal solves
 
 ## License
 
