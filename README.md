@@ -24,7 +24,7 @@ Anything already present is left alone. Anything missing gets pulled in automati
 
 ## Running it
 
-**Easiest — double-click `RUN\_ME.bat`.** It elevates to admin (winget needs that), bypasses the execution-policy nonsense, and keeps the window open at the end so you can read the results.
+**Easiest thing ever to use, literally just download the folder, extract if zipped, and double-click `RUN\_ME.bat`.** It elevates to admin (winget needs that), bypasses the execution-policy nonsense, and keeps the window open at the end so you can read the results.
 
 **Or, in PowerShell ISE:** open `fulldevkit.ps1`, run as admin, press F5. ISE runs the script content in-session so the execution policy doesn't block it.
 
