@@ -212,6 +212,37 @@ if (Test-Path $vswhere) {
     }
 }
 
+# ---- WSL (Linux on Windows) ----
+# Not a winget package - it's a Windows feature, so it has its own installer.
+# `wsl --status` returns a clean exit code if it's already set up. If not,
+# `wsl --install` pulls the kernel + Ubuntu by default. Heads up: WSL almost
+# always wants a REBOOT before it's actually usable - it's not broken, Windows
+# just needs to finish enabling the virtualization feature.
+Write-Host "`n--- WSL ---`n"
+$wslCmd = Get-Command wsl -ErrorAction SilentlyContinue
+$wslReady = $false
+if ($wslCmd) {
+    wsl --status 2>$null | Out-Null
+    if ($LASTEXITCODE -eq 0) { $wslReady = $true }
+}
+if ($wslReady) {
+    Write-Host "[OK]    WSL already set up"
+} else {
+    Write-Host "[MISS]  WSL not ready - installing (kernel + Ubuntu)..."
+    try {
+        wsl --install --no-launch 2>&1 | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "[FIXED] WSL installed - REBOOT to finish, then run 'wsl' once to set up your user."
+        } else {
+            throw
+        }
+    } catch {
+        Write-Host "[FAIL]  WSL install didn't take."
+        Write-Host "        manual: run 'wsl --install' in an admin terminal, then reboot."
+        $failed = $true
+    }
+}
+
 # ---- sanity check the PATH ----
 # half the "it's installed but not found" headaches come down to PATH, so
 # eyeball the important ones. fresh terminal usually fixes any stragglers.
