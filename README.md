@@ -18,7 +18,7 @@ Any issues, message me. Just read all of this first. You need to run it with the
 |Frontend tooling|TypeScript, ESLint, Prettier, Vite, Webpack|npm|
 |Python|Python, pip|winget / ensurepip|
 |Build deps|Java (JDK 17), .NET SDK 8, VS Build Tools|winget|
-|Python libs|numpy, pandas, requests, flask, fastapi, pytest, black, and \~13 more|pip|
+|Python libs|numpy, pandas, requests, flask, fastapi, pytest, black, and many more. I started by listing all but just check the code. ctrl-f "python libraries".
 
 Anything already present is left alone. Anything missing gets pulled in automatically.
 
