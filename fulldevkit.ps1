@@ -1,15 +1,12 @@
-# fulldevkit.ps1 — my "is this machine actually ready to work" checker
+# fulldevkit.ps1
 # -------------------------------------------------------------------
 #  Read the README.MD first.
 #
-# Run it with RUN_ME.bat (handles the admin prompt for me) or open in
-# ISE and hit F5 if I'm already elevated.
+# Run it with RUN_ME.bat (handles the admin prompts)
 #
 # Installs: system stuff via winget, the JS bits via npm, py packages via pip.
 
-# OneDrive keeps stamping this with the "downloaded from internet" flag and
-# then PowerShell refuses to run it. Strip that off ourselves so I stop
-# fighting the execution policy every single time. (lost an evening to this)
+# avoiding security issues
 try { Unblock-File -Path $MyInvocation.MyCommand.Path -ErrorAction SilentlyContinue } catch {}
 
 Write-Host "`n[*] Right, let's see what this machine is missing...`n"
@@ -21,7 +18,7 @@ $hasPip = $false
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
 if (-not $isAdmin) {
     Write-Host "[WARN] Not admin - installs will probably faceplant."
-    Write-Host "       Just use RUN_ME.bat, it sorts the elevation out.`n"
+    Write-Host "       Just use RUN_ME.bat to make it easier or run in elevated ISE.`n"
 }
 
 # After winget drops a new tool, PATH in THIS session is still stale, so the
@@ -38,7 +35,7 @@ function Have-Winget {
 
 # The workhorse: is $cmd on the machine? If yes, great. If not, install it
 # the right way for its ecosystem, refresh PATH, then check again so we can
-# honestly say whether it worked.
+# say whether it worked.
 function Ensure-Tool {
     param(
         [string]$name,
@@ -59,8 +56,7 @@ function Ensure-Tool {
         switch ($method) {
             "winget" {
                 if (Have-Winget) {
-                    # --disable-interactivity is load-bearing: without it winget
-                    # likes to sit there waiting on a keypress and LOOK frozen.
+                    # --disable-interactivity is load-bearing
                     winget install --id $package -e --silent --disable-interactivity --accept-source-agreements --accept-package-agreements 2>&1 | Out-Null
                 } else {
                     Write-Host "        no winget on this box, can't auto-install."
@@ -69,8 +65,7 @@ function Ensure-Tool {
             "npm" {
                 if (Get-Command npm -ErrorAction SilentlyContinue) {
                     # NOTE TO SELF: do NOT name this $args. that's a reserved
-                    # automatic var and it silently nukes the splat, npm then
-                    # tries a local install in System32 and barfs ENOENT. burned.
+                    # automatic var andcauses major issues.
                     $pkgArr = $package -split '\s+'
                     & npm install -g @pkgArr --no-fund --no-audit --no-progress 2>&1 | Out-Null
                 } else {
@@ -106,7 +101,7 @@ function Check-Cmd($name, $cmd, $fix) {
     }
 }
 
-# pip packages, feel free to add more or rq more
+# pip packages, feel free to add more or rq more. python libraries
 $pipPackageMap = @{
     "numpy"         = "numpy"
     "pandas"        = "pandas"
