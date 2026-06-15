@@ -106,9 +106,7 @@ function Check-Cmd($name, $cmd, $fix) {
     }
 }
 
-# My usual python kit. Pretty much every project I touch wants some of these,
-# so just make sure they're all present. Add to this list whenever I find
-# myself pip-installing the same thing twice.
+# pip packages, feel free to add more or rq more
 $pipPackageMap = @{
     "numpy"         = "numpy"
     "pandas"        = "pandas"
@@ -130,6 +128,8 @@ $pipPackageMap = @{
     "pillow"        = "pillow"
     "matplotlib"    = "matplotlib"
     "scikit-learn"  = "scikit-learn"
+    "dash"          = "dash"
+    "pygame"        = "pygame"
 }
 
 # ---- the stuff nothing works without ----
@@ -140,7 +140,7 @@ Check-Cmd   "npm" npm "Reinstall Node.js"
 Check-Cmd   "npx" npx "Reinstall Node.js"
 Ensure-Tool "Git"     git    "winget" "Git.Git"          "Install https://git-scm.com"
 
-# ---- package managers I actually reach for ----
+# ---- package managers ----
 Write-Host "`n--- Package Managers ---`n"
 Ensure-Tool "pnpm" pnpm "npm" "pnpm" "npm i -g pnpm"
 Ensure-Tool "yarn" yarn "npm" "yarn" "npm i -g yarn"
@@ -186,8 +186,9 @@ try {
     }
 }
 
-# ---- heavier build deps - these are the slow ones ----
+# ---- heavier build deps, larger files, slower download  ----
 Write-Host "`n--- Build Dependencies ---`n"
+Write-Host "This may take a while"
 Ensure-Tool "Java"     java   "winget" "Microsoft.OpenJDK.17" "Install a JDK"
 Ensure-Tool ".NET SDK" dotnet "winget" "Microsoft.DotNet.SDK.8" "Install from https://dotnet.microsoft.com"
 
