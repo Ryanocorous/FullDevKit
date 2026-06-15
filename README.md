@@ -67,6 +67,8 @@ Any issues, message me. Just read all of this first. You need to run it with the
 
 Anything already present is left alone. Anything missing gets pulled in automatically.
 
+Added WSL along with Windows apps because some things just run better on Windows. Sometimes it's quicker on Windows to make small changes. Sometimes npm/Node performance in WSL is rough. I like having both.
+
 ## Running it
 
 **Easiest thing ever to use, literally just download the folder, extract if zipped, and double-click `RUN_ME.bat`.** It elevates to admin (winget needs that), bypasses the execution-policy nonsense, and keeps the window open at the end so you can read the results.
