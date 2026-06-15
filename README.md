@@ -5,11 +5,11 @@ Check and install if dev software is installed for web dev.
 
 Includes: 
 
-Python 3.12
-pip
-
-Java (OpenJDK 17)
-.NET SDK 8
+Python 3.12,
+pip,
+WSL,
+Java (OpenJDK 17),
+.NET SDK 8,
 Visual Studio Build Tools 2022
 
 Node.js
