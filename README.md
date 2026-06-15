@@ -1,11 +1,11 @@
 
 > \*\*Windows only.\*\* Leans on winget (built into Windows 10/11), so it won't do anything useful on macOS or Linux.
 
-A "is this machine actually ready to work?" checker for Windows. Run it on a fresh box (or one you haven't touched in a while) and it audits your dev toolchain — then installs whatever's missing instead of just nagging you to do it yourself.
+A "is this machine actually ready to work?" checker for Windows. Run it on a fresh box (or one you haven't touched in a while) and it audits your dev toolchain and then installs whatever's missing instead of just nagging you to do it yourself.
 
-Got tired of setting up a machine and discovering halfway through a project that half my toolchain wasn't there. So this just sorts it.
+Can be used to quickly set up whatever you need. Please let me know if you want me to add anything more.
 
-<!-- drop a screenshot of a run here once you've got one -->
+Any issues, message me. Just read all of this first. You need to run it with the bat, both in same folder.
 
 <!-- !\[fulldevkit running](docs/screenshot.png) -->
 
