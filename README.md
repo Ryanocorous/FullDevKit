@@ -1,8 +1,3 @@
-# fulldevkit
-
-!\[platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue)
-!\[shell](https://img.shields.io/badge/PowerShell-5.1%2B-5391FE)
-!\[license](https://img.shields.io/badge/license-MIT-green)
 
 > \*\*Windows only.\*\* Leans on winget (built into Windows 10/11), so it won't do anything useful on macOS or Linux.
 
