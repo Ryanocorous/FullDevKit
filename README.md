@@ -81,8 +81,8 @@ Try yourself. There's issues with windows permissions.
 
 ## Notes
 
-* **The build deps are slow.** Python, Java, and especially VS Build Tools (several GB) download quietly with no progress bar. That's not a freeze — go make a coffee.
-* **PATH lag.** Right after a fresh install, a tool might not show on PATH in the current session. The script re-reads PATH from the registry to compensate, but if you see a `\[WARN]` at the end, just close the window and run it once more — the second pass settles everything.
+* **The build deps are slow.** Python, Java, and especially VS Build Tools (several GB) download quietly with no progress bar. If your internet isn't great, this could take some time.
+* **PATH lag.** Right after a fresh install, a tool might not show on PATH in the current session. The script re-reads PATH from the registry to compensate, but if you see a `\[WARN]` at the end, just close the window and run it once more.
 * **Adding your own python libs:** edit the `$pipPackageMap` block near the top of the script.
 
 ## Turning it into an .exe (optional)
