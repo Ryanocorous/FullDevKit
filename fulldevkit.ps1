@@ -5,8 +5,6 @@
 # Run it with RUN_ME.bat (handles the admin prompts)
 #
 # Installs: system stuff via winget, the JS bits via npm, py packages via pip.
-
-
 # 
 
 # avoiding security issues
@@ -106,28 +104,67 @@ function Check-Cmd($name, $cmd, $fix) {
 
 # pip packages, feel free to add more or rq more. python libraries
 $pipPackageMap = @{
-    "numpy"         = "numpy"
-    "pandas"        = "pandas"
-    "requests"      = "requests"
-    "flask"         = "flask"
-    "fastapi"       = "fastapi"
-    "uvicorn"       = "uvicorn"
-    "sqlalchemy"    = "sqlalchemy"
-    "pytest"        = "pytest"
-    "black"         = "black"
-    "mypy"          = "mypy"
-    "httpx"         = "httpx"
-    "pydantic"      = "pydantic"
-    "python-dotenv" = "python-dotenv"
-    "rich"          = "rich"
-    "typer"         = "typer"
-    "celery"        = "celery"
-    "redis"         = "redis"
-    "pillow"        = "pillow"
-    "matplotlib"    = "matplotlib"
-    "scikit-learn"  = "scikit-learn"
-    "dash"          = "dash"
-    "pygame"        = "pygame"
+    "numpy"            = "numpy"
+    "pandas"           = "pandas"
+    "requests"         = "requests"
+    "flask"            = "flask"
+    "fastapi"          = "fastapi"
+    "uvicorn"          = "uvicorn"
+    "sqlalchemy"       = "sqlalchemy"
+    "pytest"           = "pytest"
+    "black"            = "black"
+    "mypy"             = "mypy"
+    "httpx"            = "httpx"
+    "pydantic"         = "pydantic"
+    "python-dotenv"    = "python-dotenv"
+    "rich"             = "rich"
+    "typer"            = "typer"
+    "celery"           = "celery"
+    "redis"            = "redis"
+    "pillow"           = "pillow"
+    "matplotlib"       = "matplotlib"
+    "scikit-learn"     = "scikit-learn"
+    "dash"             = "dash"
+    "pygame"           = "pygame"
+
+    # data
+    "scipy"            = "scipy"
+    "seaborn"          = "seaborn"
+    "plotly"           = "plotly"
+    "jupyterlab"       = "jupyterlab"
+    "ipykernel"        = "ipykernel"
+    "nbconvert"        = "nbconvert"
+    "jupytext"         = "jupytext"
+    # data- file formats and data exchanging
+    "openpyxl"         = "openpyxl"
+    "xlsxwriter"       = "xlsxwriter"
+    "pyarrow"          = "pyarrow"
+    # data-  high performance analytics
+    "polars"           = "polars"
+    "duckdb"           = "duckdb"
+    "dask"             = "dask"
+    "modin"            = "modin"
+    # data- statistics
+    "statsmodels"      = "statsmodels"
+    # data- database connectivity
+    "psycopg"          = "psycopg[binary]"
+    "connectorx"       = "connectorx"
+    # data-  ML
+    "xgboost"          = "xgboost"
+    "imbalanced-learn" = "imbalanced-learn"
+    # data- time series packages
+    "sktime"           = "sktime"
+    # data- data profiling
+    "ydata-profiling"  = "ydata-profiling"
+    "great-expectations" = "great-expectations"
+    "missingno"        = "missingno"
+    # data- optional/extradependencies/ML
+    #    "vaex"             = "vaex"
+    #    "catboost"         = "catboost"    
+    #    "lightgbm"         = "lightgbm"    
+    #    "prophet"          = "prophet"    
+    #    "pyodbc"           = "pyodbc"    
+    #    "pmdarima"         = "pmdarima"    
 }
 
 # ---- the stuff nothing works without ----
