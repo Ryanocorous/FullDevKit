@@ -1,3 +1,13 @@
+TO DO:
+
+1) Add version for Linux. Specifically things for Ubuntu. 
+2) Add code for local FTP sharing secure to local only, ensuring the user can easily share files between WSL dispos and windows. Currently using port 2200 but has some issues I'm ironing out before I add to repo
+3) Add more useful things (VSCode etc) so it can run on fresh machine
+4) Add advanced customization and debugging for registry (as optional)
+5) Add better version control options for PC-wide file versions
+6) Add better installation control (Easy uninstall, easy reinstall, easy update, etc.)
+
+
 
 > Windows only. Leans on winget (built into Windows 10/11), so it won't do anything useful on macOS or Linux.
 
